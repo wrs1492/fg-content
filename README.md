@@ -1,6 +1,8 @@
 # fg-content
 
 
+Read this for hw: https://12factor.net/
+
 
 
 content is text
