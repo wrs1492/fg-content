@@ -32,3 +32,9 @@ declare module 'sha.js' {
     // tslint:enable:no-method-signature
   }
 }
+
+// allow importing of json files
+declare module '*.json' {
+  const value: any;
+  export default value;
+}
