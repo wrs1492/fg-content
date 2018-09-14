@@ -5,10 +5,13 @@ import api from './api'
 
 async function initServer(): Promise<void> {
 	console.log('Starting Server')
-	const express = require('express')
+	let express = require('express')
+	let bodyParser = require('body-parser')
+
 	let app = express()
 
 	// setup routes
+	app.use(bodyParser.json())
 	app.use('/api', api)
 
 	// start the server
