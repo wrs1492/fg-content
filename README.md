@@ -1,4 +1,5 @@
 # Fearlessly Girl `Content`
+
 ---
 
 ## "Features" / Description
@@ -9,8 +10,9 @@
 #### Food for thought
 - Does content have an owner (and who owns it)?
 
-##Misc
 ---
+
+## Misc
 
 #### Postman Collection
 - https://www.getpostman.com/collections/86b08c75bf0b2c6ff1f6
