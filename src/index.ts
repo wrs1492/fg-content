@@ -5,7 +5,7 @@ import api from './api'
 import log from './lib/log'
 
 async function initServer(): Promise<void> {
-	log.info('Starting Server')
+	log.verbose('Starting Server')
 	let express = require('express')
 	let bodyParser = require('body-parser')
 
