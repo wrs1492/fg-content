@@ -1,33 +1,34 @@
-/*
-import * as winston from 'winston'
 import * as colors from 'colors'
-const { combine, splat, simple, prettyPrint } = winston.format
+import * as winston from 'winston'
 
+const transports = [
+	new winston.transports.Console({
+		colorize: true,
+		timestamp: true,
+		level: process.env.LOG_LEVEL || 'debug',
+	}),
+]
 
-const logger = winston.createLogger({
-	format: combine(splat(), simple(), prettyPrint()),
-	transports: [new winston.transports.Console()],
+var logger = new winston.Logger({
+	transports,
 })
 
-function format(color: string, args: any) {
+function format(color, args) {
 	if (args.length > 1) {
-		args[0] = (colors as any)[color].bold(args[0]) + colors.white.bold(':')
+		args[0] = colors[color].bold(args[0]) + colors.white.bold(':')
 	}
-
 	return args
 }
 
 // Wrapping the logger to provide formatting for a 'context' argument
 // e.g. log.debug('class.function', 'blew up for reasons and stuff')
-const log: any = {
-	logger,
-	error: (...args) => (logger.error as any)(...format('red', args)),
-	warn: (...args) => (logger.warn as any)(...format('white', args)),
-	info: (...args) => (logger.info as any)(...format('white', args)),
-	verbose: (...args) => (logger as any).verbose(...format('white', args)),
-	debug: (...args) => (logger as any).debug(...format('white', args)),
-	silly: (...args) => (logger as any).info(...format('rainbow', args)),
+const log = {
+	error: (...args) => logger.error(format('red', args)[0], format('red', args)[1]),
+	warn: (...args) => logger.warn(format('white', args)[0], format('white', args)[1]),
+	info: (...args) => logger.info(format('white', args)[0], format('white', args)[1]),
+	verbose: (...args) => logger.verbose(format('white', args)[0], format('white', args)[1]),
+	debug: (...args) => logger.debug(format('white', args)[0], format('white', args)[1]),
+	silly: (...args) => logger.info(format('rainbow', args)[0], format('rainbow', args)[1]),
 }
 
 export default log
-*/
