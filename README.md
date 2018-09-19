@@ -3,23 +3,30 @@
 ---
 
 ## "Features" / Description
-- content is text
-- support deletion
-- hangouts
+
+-   content is text
+-   support deletion
+-   hangouts
 
 #### Food for thought
-- Does content have an owner (and who owns it)?
+
+-   Does content have an owner (and who owns it)?
 
 ---
 
 ## Misc
 
 #### Postman Collection
-- https://www.getpostman.com/collections/86b08c75bf0b2c6ff1f6
+
+-   https://www.getpostman.com/collections/86b08c75bf0b2c6ff1f6
 
 #### Usefull Links:
-- https://12factor.net/
+
+-   https://12factor.net/
 
 #### Typescript People
-- Erik Craddock 
-- Jorge Martinez
+
+-   Erik Craddock
+-   Jorge Martinez
+
+## Notes from David
