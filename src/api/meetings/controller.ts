@@ -1,9 +1,15 @@
 import { inspect } from 'util'
+import ICEBREAKERS from './icebreakers'
 
-export { iceBreakers }
+export { icebreakers }
 
-function iceBreakers(req: any, res: any) {
+function icebreakers(req: any, res: any) {
 	console.log('Toss a soccerball around with your feelings.', inspect(req.body))
 
-	res.status(200).send('Yo, wazzup daddy.')
+	let icebreakerName = req.body.icebreakerName
+
+	// TODO replace with call to db
+	let content = ICEBREAKERS[icebreakerName]
+
+	res.status(200).send(content)
 }
