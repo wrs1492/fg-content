@@ -19,6 +19,7 @@
 		"prefer-const": false,
 		"ordered-imports": false,
 		"object-literal-sort-keys": false,
-		"no-var-keyword": true
+		"no-var-keyword": true,
+		"no-console": false // TODO make this true
 	}
 }

@@ -1,8 +1,9 @@
 import * as express from 'express'
-import { icebreakers } from './meetings/controller'
+import * as meetings from './meetings/controller'
 
 const router = express.Router()
 
-router.route('/meetings/icebreakers').post(icebreakers)
+router.route('/meetings/icebreaker/create').post(meetings.createIcebreaker)
+router.route('/meetings/icebreaker/find').post(meetings.findIcebreaker)
 
 export default router

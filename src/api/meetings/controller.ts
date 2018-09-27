@@ -1,15 +1,25 @@
 import { inspect } from 'util'
-import ICEBREAKERS from './icebreakers'
+import IcebreakerDB from '../../dataAccessors/database/icebreakers/handler'
+import log from '../../lib/log'
 
-export { icebreakers }
+export { createIcebreaker, findIcebreaker }
 
-function icebreakers(req: any, res: any) {
-	console.log('Toss a soccerball around with your feelings.', inspect(req.body))
+async function createIcebreaker(req: any, res: any) {
+	log.verbose('In route to create new icebreaker...')
+	console.log('Creating icebreaker with body', inspect(req.body))
+	let name = req.body.name
+	let description = req.body.description
 
-	let icebreakerName = req.body.icebreakerName
+	let icebreakerId = await IcebreakerDB.createIcebreaker(name, description)
 
-	// TODO replace with call to db
-	let content = ICEBREAKERS[icebreakerName]
+	res.status(200).send(icebreakerId)
+}
 
-	res.status(200).send(content)
+async function findIcebreaker(req: any, res: any) {
+	log.verbose('In route to find icebreaker...')
+	console.log('Finding icebreaker with body', inspect(req.body))
+	let name = req.body.name
+	let icebreaker = await IcebreakerDB.findIcebreaker(name)
+
+	res.status(200).send(icebreaker.description)
 }
