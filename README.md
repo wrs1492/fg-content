@@ -29,4 +29,22 @@
 -   Erik Craddock
 -   Jorge Martinez
 
-## Notes from David
+## TODO
+
+be able to create, delete, and view events
+when you create an event, create a list for attendees, starting in an unnotified state
+
+> get event/hangout by memberId
+> get future hangouts by memberId
+
+Event:
+name
+description
+spotify playlist
+location
+date/time
+
+Icebreakers Collection
+
+// notifications for events
+// when notified change user state to be notified
